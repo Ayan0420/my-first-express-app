@@ -7,7 +7,7 @@ const Blog = require('../models/blog');
 const blog_index = (req, res) => {
     Blog.find().sort({ createdAt: -1 }) //this is going to get all the document from the database.
         .then((result) => { //then store it in result.
-            res.render('index', {title: "All Blogs", blogs: result}); //and use blogs as the context we can access to our view engine.
+            res.render('blog/index', {title: "All Blogs", blogs: result}); //and use blogs as the context we can access to our view engine.
         })
         .catch((err) => {
             console.log(err);
@@ -16,7 +16,7 @@ const blog_index = (req, res) => {
 
 //create blog
 const blog_create_get = (req, res) => {
-    res.render('create', { title:"Create a New Blog" });
+    res.render('blog/create', { title:"Create a New Blog" });
 }
 
 // post blog
@@ -43,7 +43,7 @@ const blog_details = (req, res) => {
     //we can now retrive the blog given by id in the db.
     Blog.findById(id)
         .then((result) => {
-            res.render('blog-details', { title: result.title, blog: result });
+            res.render('blog/blog-details', { title: result.title, blog: result });
         })
         .catch((err) => {
             console.log(err);

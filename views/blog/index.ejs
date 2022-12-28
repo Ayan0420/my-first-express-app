@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 <!--Personal Note: we use %- instead of %= since the latter produces a string.
     %- renders the template as raw data--> 
 <body>
     
-    <%- include('./partials/nav.ejs') %> 
+    <%- include('../partials/nav.ejs') %> 
 
     <div class="blogs content">
         <h2>All Blogs</h2>
@@ -24,7 +24,7 @@
         <% } %>
     </div>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
 </body>
 </html>

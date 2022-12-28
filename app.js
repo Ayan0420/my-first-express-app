@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -8,13 +9,13 @@ const blogRoutes = require('./routes/blogRoutes')
 const app = express();
 
 //connect to mongodb
-const dbURI = "mongodb+srv://ayan:ayantech_1234@mylearningprojects.1vfhtdz.mongodb.net/first-express-app?retryWrites=true&w=majority";
+const dbURI = process.env.DB_URI;
 mongoose.set('strictQuery', true); //for deprecation warning ver. 6.8.1
 mongoose.connect(dbURI)
     .then(result => {
         console.log('Sucessfully connected to the db...')
         // it will only start listening once the db connection is established.
-        app.listen(3000, () => console.log('Listening to port 3000...')) 
+        app.listen(process.env.PORT || 3000, () => console.log('Listening to port 3000...')) 
     })
     .catch(err => console.log('There is an error: ', err))
 

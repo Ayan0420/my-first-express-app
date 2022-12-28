@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<!--Personal Note: we use %- instead of %= since the latter produces a string.
+    %- renders the template as raw data--> 
+<body>
+    
+    <%- include('./partials/nav.ejs') %> 
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        <!-- this block renders the data from the blogs object in the browser -->
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach( blog => { %>
+                <a class="single" href="/blogs/<%= blog._id %>"> 
+                    <h3 class="title"><%= blog.title %></h3>
+                    <p class="snippet"><%= blog.snippet %></p>
+                </a>
+
+            <% }) %>
+
+        <% } else { %>
+            <p>No blogs available...</p>        
+        <% } %>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>

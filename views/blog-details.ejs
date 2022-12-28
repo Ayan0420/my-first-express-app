@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="details content">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.body %></p>
+        <a class="delete" data-customname="<%= blog._id %>">Delete</a>
+    </div>
+    
+    
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        //this script is for sending a delete request to the server.
+        const trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/blogs/${ trashcan.dataset.customname }`;
+            fetch(endpoint, {method: 'DELETE'})
+            .then(response => response.json()) //this returns a promise
+            .then(data => window.location.href = data.redirect) //upon parsing the response object we are now storing it in the data and redirect using the window object
+            .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>

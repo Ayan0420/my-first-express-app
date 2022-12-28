@@ -8,7 +8,7 @@ const Blog = require('./models/blog')
 const app = express();
 
 //connect to mongodb
-const dbURI = "mongodb+srv://ayan:ayantech_1234@mylearningprojects.1vfhtdz.mongodb.net/first-express-app?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://<user>:<password>@mylearningprojects.1vfhtdz.mongodb.net/first-express-app?retryWrites=true&w=majority";
 mongoose.set('strictQuery', true); //for deprecation warning ver. 6.8.1
 mongoose.connect(dbURI)
     .then(result => {

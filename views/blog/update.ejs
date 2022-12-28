@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="create-blog content">
+        <form action="/blogs/update/<%= blog._id %> " method="POST">
+            <!-- the name attribute must be added so that we
+                can access the form data in the POST request  -->
+            <a class="cancel" href="/blogs/<%= blog._id %>">Go Back</a>
+            <label for="title">Blog title</label>
+            <input type="text" id="title" name="title" value="<%= blog.title %>" required>
+            <label for="snippet">Blog snippet:</label>
+            <input type="text" id="snippet" name="snippet" value="<%= blog.snippet %>" required>
+            <label for="body">Blog body</label>
+            <textarea id="body" name="body" required><%= blog.body %></textarea>
+            <button type="submit">Update</button>
+        </form>
+    
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+</html>

@@ -18,8 +18,11 @@ router.post('/', blogControllers.blog_create_post);
     //single blog post
 router.get('/:blog_id', blogControllers.blog_details);
 
+    //update blog
+router.get('/update/:blog_id', blogControllers.blog_update_get) //this will render the update the form and fill it with the existing data
+router.post('/update/:blog_id', blogControllers.blog_update_post) // this will handle the post request for the updated data
 
-//delete blog
+    //delete blog
 router.delete('/:blog_id', blogControllers.blog_delete);
 
 module.exports = router;

@@ -78,6 +78,18 @@
           cursor: pointer;
           box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
         }
+        .update{
+          position: absolute;
+          top: 0;
+          right: 50px;
+          border-radius: 50%;
+          padding: 8px;
+        }
+        .update:hover{
+          cursor: pointer;
+          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        
         /* create styles */
         .create-blog form{
           max-width: 400px;
@@ -104,11 +116,19 @@
         }
         .create-blog button{
           margin-top: 20px;
-          background: rgb(4, 133, 58);
+          background: lightseagreen;
           border-radius: 10px;
           color: white;
           padding: 10px;
           border: 0;
           font-size: 1.2em;
           cursor: pointer;
+        }
+        .cancel{
+          position:relative;
+          border: 2px solid crimson;
+          padding: 5px;
+          border-radius: 10px;
+          background-color: crimson;
+          color: #fff;
         }

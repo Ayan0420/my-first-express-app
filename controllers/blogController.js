@@ -62,6 +62,34 @@ const blog_delete = (req, res) => {
     
 }
 
+// edit blog
+const blog_update_get = (req, res) => {
+    const id = req.params.blog_id;
+
+    Blog.findOneAndUpdate({_id: id,}, req.body, {new: true}, (err, result) => {
+        if (err){
+            console.log('Error updating blog');
+        } else {
+            res.render('blog/update', {title: "Update Blog", blog: result});
+        }
+    });
+}
+
+const blog_update_post = (req, res) => {
+    const id = req.params.blog_id;
+
+    Blog.findByIdAndUpdate({_id: id,}, req.body, (err, data) => {
+        if (err){
+            console.log(err);
+        } else {
+            res.redirect(`/blogs/${id}`)
+        }
+    });
+}
+
+
+
+
 
 //exporting all the functions
 module.exports = {
@@ -69,7 +97,9 @@ module.exports = {
     blog_create_get,
     blog_create_post,
     blog_details,
-    blog_delete
+    blog_delete,
+    blog_update_get,
+    blog_update_post
 
 }
 

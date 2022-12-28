@@ -8,6 +8,10 @@
     <div class="details content">
         <h2><%= blog.title %></h2>
         <p><%= blog.body %></p>
+
+        <a class="update" href="/blogs/update/<%= blog._id %>">
+            <img src="/edit-icon.svg" alt="delete icon">
+        </a>
         <a class="delete" data-customname="<%= blog._id %>">
             <img src="/trash-icon.svg" alt="delete icon">
         </a>

@@ -9,11 +9,7 @@ const blogRoutes = require('./routes/blogRoutes')
 const app = express();
 
 //connect to mongodb
-<<<<<<< HEAD
-const dbURI = process.env.DB_URI;
-=======
-const dbURI = "mongodb+srv://<user>:<password>@mylearningprojects.1vfhtdz.mongodb.net/first-express-app?retryWrites=true&w=majority";
->>>>>>> a9beb79d7ef3421a5c579c5e113fa05ec258fae3
+const dbURI = process.env.DB_URI
 mongoose.set('strictQuery', true); //for deprecation warning ver. 6.8.1
 mongoose.connect(dbURI)
     .then(result => {

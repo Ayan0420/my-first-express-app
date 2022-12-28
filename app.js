@@ -15,7 +15,7 @@ mongoose.connect(dbURI)
     .then(result => {
         console.log('Sucessfully connected to the db...')
         // it will only start listening once the db connection is established.
-        app.listen(process.env.PORT || 3000, () => console.log('Listening to port 3000...')) 
+        app.listen(process.env.PORT || 3000, () => console.log(`Listening to port ${process.env.PORT}...`)) 
     })
     .catch(err => console.log('There is an error: ', err))
 

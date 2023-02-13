@@ -50,7 +50,7 @@ const blog_details = (req, res) => {
         });
 }
 
-//delete blog
+//delete blog   
 const blog_delete = (req, res) => {
     const id = req.params.blog_id;
     
@@ -62,7 +62,7 @@ const blog_delete = (req, res) => {
     
 }
 
-// edit blog
+// edit blog - you need to learn more on this one
 const blog_update_get = (req, res) => {
     const id = req.params.blog_id;
 
@@ -86,9 +86,6 @@ const blog_update_post = (req, res) => {
         }
     });
 }
-
-
-
 
 
 //exporting all the functions

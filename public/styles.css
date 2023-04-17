@@ -1,134 +1,293 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-        body{
-          max-width: 1200px;
-          margin: 20px auto;
-          padding: 0 20px;
-          font-family: 'Noto Serif', serif;
 
-        }
-        p, h1, h2, h3, a, ul{
-          margin: 0;
-          padding: 0;
-          text-decoration: none;
-          color: #222;
-        }
-        /* nav & footer styles */
-        nav{
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 60px;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #ddd;
-          text-transform: uppercase;
-        }
-        nav ul{
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-        }
-        nav li{
-          list-style-type: none;
-          margin-left: 20px;
-        }
-        nav h1{
-          font-size: 3em;
-        }
-        nav p, nav a{
-          color: #777;
-          font-weight: 300;
-        }
-        footer{
-          color: #777;
-          text-align: center;
-          margin: 80px auto 20px;
-        }
-        h2{
-          margin-bottom: 40px;
-        }
-        h3{
-          text-transform: capitalize;
-          margin-bottom: 8px;
-        }
-        .content{
-          margin-left: 20px;
-        }
-        /* index styles */
-        .blogs a {
-          display:block;
-          margin: 40px 0;
-          padding-left: 30px;
-          border-left: 6px solid lightseagreen;
-          
-        }
-        .blogs a:hover h3{
-          color: lightseagreen;
-        }
-        /* details styles */
-        .details{
-          position: relative;
-        }
-        .delete{
-          position: absolute;
-          top: 0;
-          right: 0;
-          border-radius: 50%;
-          padding: 8px;
-        }
-        .delete:hover{
-          cursor: pointer;
-          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-        }
-        .update{
-          position: absolute;
-          top: 0;
-          right: 50px;
-          border-radius: 50%;
-          padding: 8px;
-        }
-        .update:hover{
-          cursor: pointer;
-          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* create styles */
-        .create-blog form{
-          max-width: 400px;
-          margin: 0 auto;
-          
-        }
-        .create-blog input,
-        .create-blog textarea{
-          display: block;
-          width: 100%;
-          margin: 10px 0;
-          padding: 8px;
-          border-radius: 10px;
-          border-width: 1px;
-          
-        }
-        .create-blog label{
-          display: block;
-          margin-top: 24px;
-        }
-        textarea{
-          height: 120px;
-          border-radius: 10px;
-        }
-        .create-blog button{
-          margin-top: 20px;
-          background: lightseagreen;
-          border-radius: 10px;
-          color: white;
-          padding: 10px;
-          border: 0;
-          font-size: 1.2em;
-          cursor: pointer;
-        }
-        .cancel{
-          position:relative;
-          border: 2px solid crimson;
-          padding: 5px;
-          border-radius: 10px;
-          background-color: crimson;
-          color: #fff;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+body{
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: 'Space Grotesk', serif;
+  background-color: #303643;
+  color: #F6EDF3;
+  
+}
+p, h1, h2, h3, a, ul{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #F6EDF3;
+}
+/* nav & footer styles */
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  /* text-transform: uppercase; */
+}
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+nav li{
+  list-style-type: none;
+  margin-left: 20px;
+  
+}
+
+.nav-li{
+  transition: all .1s;
+}
+.nav-li:hover{
+  border-bottom: solid lightseagreen;
+}
+
+nav h1{
+  font-size: 3em;
+}
+nav p, nav a{
+  color: #777;
+  font-weight: 300;
+}
+footer{
+  color: #777;
+  text-align: center;
+  margin: 80px auto 20px;
+}
+h2{
+  margin-bottom: 20px;
+}
+h3{
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.content{
+  margin-left: 20px;
+}
+/* index styles */
+.blogs a {
+  display:block;
+  margin: 40px 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-left: 6px solid lightseagreen;
+  box-shadow: 6px 6px 5px #0000006b;
+  
+}
+.blogs a:hover h3{
+  color: lightseagreen;
+}
+.single{
+  transition: all 0.3s;
+}
+
+.single-div{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.single:hover{
+  transform: scale(1.05);
+}
+/* details styles */
+.details{
+  position: relative;
+}
+.delete{
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 20%;
+  padding: 5px;
+  transition: all 0.3s;
+}
+.delete:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: lightseagreen;
+}
+.update{
+  display: flex;  
+  position: absolute;
+  top: 0;
+  right: 50px;
+  border-radius: 20%;
+  padding: 5px;
+  transition: all 0.3s;
+}
+.update:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: lightseagreen;
+}
+.svg-icon{
+  filter: invert(100%);
+}
+/* create styles */
+.create-blog form{
+  max-width: 90%;
+  margin: 0 auto;
+  
+}
+.create-blog input{
+
+  width: 50%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+.create-blog textarea{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 10px;
+  border-width: 1px;
+  
+}
+.create-blog label{
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+textarea{
+  height: 120px;
+  border-radius: 10px;
+}
+.create-blog button{
+  margin-top: 20px;
+  background: lightseagreen;
+  border-radius: 10px;
+  color: white;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  border: 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: 'Space Grotesk', serif !important;
+  transition: all .3s;
+}
+.create-blog button:hover{
+  background: #157e79;
+}
+
+.cancel{
+  display: inline;
+  border: 2px solid crimson;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+  border-radius: 10px;
+  background-color: crimson;
+  color: #fff;
+  font-weight: bold;
+  transition: all .3s;
+}
+.cancel:hover{
+  background-color: #a50e2c;
+  border: 2px solid #a50e2c;
+}
+
+.cancel-postion{
+  display: flex;
+  justify-content: end;
+  margin: 0px;
+}
+
+.size{
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 0px;
+}
+
+.controls{
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: .5rem;
+}
+
+.add-blog{
+  background-color: #20b2aa;
+  color: white;
+  padding: .2rem .7rem;
+  border-radius: 15px;
+  transition: all .3s;
+  
+}
+.add-blog:hover{
+  background-color: #1a928c;
+  box-shadow: 2px 3px 2px #2222228c;
+}
+
+.add-blog-li{
+  transition: all .3s;
+}
+.add-blog-li:hover{
+  transform:translateY(-.4rem);
+}
+
+.category{
+  margin-bottom: 1rem;
+}
+
+.category-badges{
+  background-color: #77C2D1;
+  color: #000000;
+  font-size: .7rem;
+  margin-right: .2rem;
+  padding: .2rem .5rem;
+  border-radius: 15px;
+}
+
+.blog-title{
+  /* text-align: center; */
+  margin-bottom: 10px;
+}
+
+.blog-author{
+  margin: 0px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  /* text-align: center; */
+  border-bottom: solid #77C2D1;
+}
+
+.cke_inner{
+  border-radius: 20px !important;
+  background: transparent !important;
+}
+#cke_body{
+  border: solid 1px;
+  border-radius: 20px !important;
+  box-shadow: 6px 6px 5px #0000006b;
+  background: transparent !important;
+}
+.cke_top{
+  display: flex !important;
+  justify-content: center !important;
+  border: none !important;
+  background: #303643 !important;
+  border-top-right-radius: 20px !important;
+  border-top-left-radius: 20px !important;
+}
+.cke_bottom {
+
+  background: #303643 !important;
+  border-bottom-right-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+}
+.cke_path_item{
+  font-weight:normal !important;
+  color: #fff !important;
+}

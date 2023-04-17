@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 const blogRoutes = require('./routes/blogRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 //create express app
 const app = express();
@@ -15,7 +16,7 @@ mongoose.connect(dbURI)
     .then(result => {
         console.log('Sucessfully connected to the db...')
         // it will only start listening once the db connection is established.
-        app.listen(process.env.PORT || 3000, () => console.log(`Listening to port ${process.env.PORT}...`)) 
+        app.listen(process.env.PORT || 4000, () => console.log(`Listening to port http://localhost:${process.env.PORT}...`)) 
     })
     .catch(err => console.log('There is an error: ', err))
 
@@ -51,7 +52,8 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', { title:"About" });
 });
-
+    //user routes
+app.use("/user", userRoutes)
     //blog routes
 app.use('/blogs', blogRoutes);
 

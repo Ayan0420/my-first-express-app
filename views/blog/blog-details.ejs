@@ -6,14 +6,15 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="details content">
-        <h2><%= blog.title %></h2>
-        <p><%= blog.body %></p>
+        <h2 class="blog-title"><%= blog.title %></h2>
+        <h5 class="blog-author">Author: Ayan Cabz</h5>
+        <p><%- blog.body -%></p>
 
         <a class="update" href="/blogs/update/<%= blog._id %>">
-            <img src="/edit-icon.svg" alt="delete icon">
+            <img class="svg-icon" src="/edit-icon.svg" alt="delete icon">
         </a>
         <a class="delete" data-customname="<%= blog._id %>">
-            <img src="/trash-icon.svg" alt="delete icon">
+            <img class="svg-icon" src="/trash-icon.svg" alt="delete icon">
         </a>
     </div>
     

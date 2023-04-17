@@ -8,20 +8,47 @@
     <%- include('../partials/nav.ejs') %> 
 
     <div class="blogs content">
-        <h2>All Blogs</h2>
-        <!-- this block renders the data from the blogs object in the browser -->
-        <% if (blogs.length > 0) { %>
-            <% blogs.forEach( blog => { %>
-                <a class="single" href="/blogs/<%= blog._id %>"> 
-                    <h3 class="title"><%= blog.title %></h3>
-                    <p class="snippet"><%= blog.snippet %></p>
-                </a>
-
-            <% }) %>
-
-        <% } else { %>
-            <p>No blogs available...</p>        
-        <% } %>
+        <h2>All blogs</h2>
+        
+        <div class="blog-list">
+            <!-- this block renders the data from the blogs object in the browser -->
+            <% if (blogs.length > 0) { %>
+                <% blogs.forEach( blog => { %>
+                    <a class="single" href="/blogs/<%= blog._id %>"> 
+                        <div class="single-div">
+                            <div>
+                                <h3 class="title"><%= blog.title %></h3>
+                                <!-- (%- varible -) lets you remove quotation marks on strings -->
+                                <p class="snippet"><%- blog.snippet -%></p>
+                            </div>
+                            <div>
+                                <div class="controls" >
+                                    <i class="size" style="color:lightseagreen;"><i class="lni lni-user"></i></i>
+                                    <span class="numbers">Jerry Clark Cabuntucan</span>
+                                </div>
+                                <div class="controls">
+                                    <i class="size" style="color:rgb(98, 226, 59);"><i class="size lni lni-invention"></i></i>
+                                    <span class="numbers">253</span>
+                                </div>
+                                <div class="controls">
+                                    <i class="size" style="color:rgb(51, 81, 214);"><i class="lni lni-comments"></i></i>
+                                    <span class="numbers">53</span>
+                                </div>
+                            </div>
+                            <div class="categories">
+                                <span class="category-badges">HTML</span>
+                                <span class="category-badges">CSS</span>
+                                <span class="category-badges">Javascript</span>
+                            </div>
+                        </div>
+                    </a>
+    
+                <% }) %>
+    
+            <% } else { %>
+                <p>No blogs available...</p>        
+            <% } %>
+        </div>
     </div>
 
     <%- include('../partials/footer.ejs') %>

@@ -24,8 +24,14 @@ const blog_create_post = (req, res) => {
     //we can now access the body of the post request because of the express.urlencoded() middleware
     console.log(req.body); //this just for debugging, you can just remove it
     
+    const {title, snippet, body} = req.body;
     //the actual logic - we are saving the data to the database
-    const blog = new Blog(req.body); //instantiating the Blog object and passing in the req.body to create a new document/entry in the db.
+
+    const blog = new Blog({
+        title,
+        snippet: body.slice(0, 80) + "... (click to read more)",
+        body
+    }); //instantiating the Blog object and passing in the req.body to create a new document/entry in the db.
 
     blog.save()
         .then((result) => {
